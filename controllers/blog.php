@@ -11,6 +11,7 @@ if ($isEntryClicked){
     $blogOutput= include_once 'views/entry-html.php';
     // comment controler comes here
     $blogOutput .= include_once 'controllers/comments.php';
+//    $blogOutput .= include_once  'views/comments-html.php';
 } else {
     $entries= $entryTable->getAllEntries();
     // view all entries
