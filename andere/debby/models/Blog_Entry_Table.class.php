@@ -4,8 +4,8 @@
 class Blog_Entry_Table
 {
     /**
-     * @var /PDO
-     */
+    * @var /PDO
+    */
 
     private $db;
 

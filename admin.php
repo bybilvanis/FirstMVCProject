@@ -1,26 +1,11 @@
 <?php
-
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-// connection database
-$dbInfo = "mysql:host=localhost;dbname=simple_blog";
-$dbUser= "root";
-$dbPassword= "root";
-$db = new PDO ($dbInfo, $dbUser, $dbPassword);
-$db-> setAttribute(PDO:: ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
-try{
-    $db = new PDO($dbInfo, $dbUser, $dbPassword);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-} catch (Exception $e){
-    $pageData->content .= "<h3>Connection failed!</h3><p>$e</p>";
-}
-
+include_once 'conn.php';
 // model
 include_once 'models/Page_Data.class.php';
 $pageData = new Page_Data();
 $pageData->title = "PHP MySQL Blog Demo";
 $pageData->addCSS('css/style.css');
+$pageData->addScript('js/editor.js');
 $pageData->content = "<h1>$pageData->title</h1>";
 
 // view

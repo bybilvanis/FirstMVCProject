@@ -15,7 +15,6 @@ return "
         <fieldset>
             <legend>New Entry Submission</legend>
             <label>Title</label>
-            <p id='title-warning'></p>
             <input type='text' name='title' maxlength='150' value='$entryData->entry_title'> <!-- maximale lengte gelijk zetten aan varchar -->
             <label>Entry</label>
             <textarea name='entry'>$entryData->entry_text</textarea> <!-- later RTE erin -->
