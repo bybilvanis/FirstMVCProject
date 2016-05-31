@@ -26,4 +26,9 @@ class Comment_Table extends Table
     // update
 
     // delete
+    public function deleteByEntryId($id){
+        $sql= "DELETE FROM comment WHERE entry_id= ?";
+        $data= array($id);
+        $statement= $this->makeStatement($sql,$data);
+    }
 }

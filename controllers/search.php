@@ -1,7 +1,4 @@
 <?php
-/**
- * @var /PDO
- */
 
 // model
 include_once 'models/Blog_Entry_Table.class.php';

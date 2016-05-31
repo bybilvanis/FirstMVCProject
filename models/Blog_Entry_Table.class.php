@@ -73,9 +73,15 @@ class Blog_Entry_Table
 
     //DELETE
     public function deleteEntry($id) { //parameter nodig om te weten welke te verwijderen
+        $this->deleteCommentsByID($id);
         $sql = "DELETE FROM blog_entry WHERE entry_id = ?";
         $data = array($id);
         $statement = $this->makeStatement($sql,$data);
+    }
+    private function deleteCommentsByID($id){
+        include_once 'models/Comment_Table.class.php';
+        $comments= new Comment_Table($this->db);
+        $comments->deleteByEntryId($id);
     }
 
 }

@@ -10,8 +10,8 @@ return "
     <title>$pageData->title</title>
 </head>
 <body>
-    $pageData->content
     $pageData->scriptElements
+    $pageData->content
 </body>
 </html>
 ";

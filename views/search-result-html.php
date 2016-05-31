@@ -7,7 +7,7 @@ $searchHTML= "<section id='search'>
                 <p>You search for <em>$searchTerm</em></p>
                 <ul>";
 while ($searchRow = $searchData->fetchObject()){
-    $href= "index.php?page=blog&amp;id=$searchRow->enrty_id";
+    $href= "index.php?page=blog&amp;id=$searchRow->entry_id";
     $searchHTML .= "<li>
                         <a href='$href'>$searchRow->entry_title</a>
                     </li>";
