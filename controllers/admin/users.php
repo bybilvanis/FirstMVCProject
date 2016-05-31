@@ -1,6 +1,7 @@
 <?php
 // model
 include_once 'models/Admin_Table.class.php';
+
 $createNewAdmin= isset($_POST['new-admin']);
 if ($createNewAdmin){
     $email= $_POST['email'];
@@ -8,7 +9,7 @@ if ($createNewAdmin){
     $adminTable= new Admin_Table($db);
     try {
         $adminTable->createAdmin($email, $password);
-        $adminFormMessage= "New user created for <em>$email</em>";
+        $adminFormMessage= "New user created for $email.";
     } catch (Exception $e){
         $adminFormMessage= $e->getMessage();
     }

@@ -1,18 +1,28 @@
 <?php
 
-class Admin_User
-{
+class Admin_User {
+    
+    public function __construct(){
+        session_start();
+    }
+    
+    public function isLoggedIn(){
+        $sessionIsSet= isset($_SESSION['logged_in']);
+        if ($sessionIsSet){
+            $output= $_SESSION['logged_in'];
+        } else {
+            $output= false;
+        }
+        return $output;
+    }
+    
     private $loggedIn= false;
 
-    public function isLoggedIn(){
-        return $this->loggedIn;
-    }
-
     public function login(){
-        $this->loggedIn= true;
+        $_SESSION['logged_in']= true;
     }
     
     public function logout(){
-        $this->loggedIn= false;
+        $_SESSION['logged_in']= false;
     }
 }

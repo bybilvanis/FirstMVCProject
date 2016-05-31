@@ -3,15 +3,15 @@ if (isset($adminFormMessage) === false){
     $adminFormMessage= "";
 }
 return "
-<form method='post' action='admin.php' id='new-admin-form'>
+<form method='post' action='admin.php?page=users' id='new-admin-form'>
     <fieldset>
-        <legend>Login as admin</legend>
+        <legend>Create a new admin user</legend>
         <label for='email'>Email</label>
         <input type='email' name='email' required>
         <label for='password'>Password</label>
         <input type='password' name='password' required>
-        <input type='submit' name='log-in' value='Login''>
+        <input type='submit' name='new-admin' value='Create user''>
     </fieldset>
-    <p id='login-form-message'>$adminFormMessage</p>
+    <p id='admin-form-message'>$adminFormMessage</p>
 </form>
 ";
