@@ -36,6 +36,13 @@ class Admin_Table extends Table
         }
     }
 
+    public function getAllUsers(){ //alle entries, maar van inhoud slechts 150 tekens
+        $sql = "SELECT  * FROM admin";
+        $statement = $this->makeStatement($sql);
+        return $statement;
+    }
+    
+
     // update
 
     // delete
