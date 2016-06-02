@@ -46,4 +46,11 @@ class Admin_Table extends Table
     // update
 
     // delete
+
+    public function removeUser($id){
+        $sql= "DELETE FROM admin WHERE admin_id=:admin_id";
+        $data= array($id);
+        $statement= $this->makeStatement($sql,$data);
+        return $statement;
+    }
 }
